@@ -5,37 +5,10 @@ export const Container = styled.div`
   align-items: center;
   flex-direction: column;
 `;
-export const SelectTableContainer = styled.div`
-  display: flex;
-  align-items: center;
-  border: 1px solid #b5b5b5;
-  border-collapse: collapse;
-  border-radius: 5px;
-  width: 1291px;
-`;
-export const SelectContainer = styled.div`
-  width: 70px;
-  display: flex;
-  align-items: center;
-`;
-export const Select = styled.div`
-  border: 1px solid #b5b5b5;
-  width: 33px;
-  height: 33px;
-  border-radius: 50%;
-  background-color: #fff;
-  padding: 6px;
-  margin-left: 15px;
 
-  div {
-    width: 19px;
-    height: 19px;
-    border-radius: 50%;
-    background-color: #b5b5b5;
-  }
-`;
 export const TableContainer = styled.form`
-  width: 100%;
+  width: 1218px;
+  border-radius: 5px;
 `;
 export const TableTitleContainer = styled.div`
   text-align: center;

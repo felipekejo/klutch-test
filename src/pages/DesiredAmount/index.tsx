@@ -16,6 +16,9 @@ import {
   TextContent,
   ContentForm,
   ButtonForm,
+  SelectTableContainer,
+  SelectContainer,
+  Select,
 } from './styles';
 
 const DesireAmount: React.FC = () => {
@@ -42,8 +45,24 @@ const DesireAmount: React.FC = () => {
             <Input placeholder="R$0,00" mask="currency" />
             <ButtonForm>Calcular</ButtonForm>
           </ContentForm>
+          <SelectTableContainer>
+            <SelectContainer>
+              <Select>
+                <div />
+              </Select>
+            </SelectContainer>
+            <TableInstallment />
+          </SelectTableContainer>
+          <SelectTableContainer>
+            <SelectContainer>
+              <Select>
+                <div />
+              </Select>
+            </SelectContainer>
+            <TableInstallment />
+          </SelectTableContainer>
         </Content>
-        <TableInstallment />
+
         <Footer />
       </Container>
     </>
