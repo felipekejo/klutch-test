@@ -18,27 +18,29 @@ import {
 
 const ApplyForLoan2: React.FC = () => {
   return (
-    <Container>
+    <>
       <Header />
-      <TitleContainer>
-        <FaPlusCircle />
-        <TitleIMage src={iconFilling} alt="filling" />
-        <TitleText>
-          Solicitar <br />
-          Empréstimo
-        </TitleText>
-      </TitleContainer>
-      <Content>
-        <TextContent>Escolha a modalidade:</TextContent>
+      <Container>
+        <TitleContainer>
+          <FaPlusCircle />
+          <TitleIMage src={iconFilling} alt="filling" />
+          <TitleText>
+            Solicitar <br />
+            Empréstimo
+          </TitleText>
+        </TitleContainer>
+        <Content>
+          <TextContent>Escolha a modalidade:</TextContent>
 
-        <ButtonCard>Cartão de Crédito</ButtonCard>
-        <p>Ou</p>
-        <PayrollLoansContainer>
-          <PayrollLoans>Crédito Consignado</PayrollLoans>
-          <p>Em Breve</p>
-        </PayrollLoansContainer>
-      </Content>
-    </Container>
+          <ButtonCard>Cartão de Crédito</ButtonCard>
+          <p>Ou</p>
+          <PayrollLoansContainer>
+            <PayrollLoans>Crédito Consignado</PayrollLoans>
+            <p>Em Breve</p>
+          </PayrollLoansContainer>
+        </Content>
+      </Container>
+    </>
   );
 };
 

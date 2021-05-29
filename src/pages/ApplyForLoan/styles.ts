@@ -1,11 +1,16 @@
 import styled from 'styled-components';
 
-export const Container = styled.div``;
+export const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+`;
 
 export const TitleContainer = styled.div`
   display: flex;
   align-items: center;
-  margin-left: 150px;
+  width: 1218px;
   svg {
     height: 67px;
     width: 67px;

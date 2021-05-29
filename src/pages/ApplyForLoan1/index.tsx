@@ -28,53 +28,56 @@ import {
 
 const ApplyForLoan: React.FC = () => {
   return (
-    <Container>
+    <>
       <Header />
-      <TitleContainer>
-        <FaPlusCircle />
-        <TitleIMage src={iconFilling} alt="filling" />
-        <TitleText>
-          Solicitar <br />
-          Empréstimo
-        </TitleText>
-      </TitleContainer>
-      <Content>
-        <ContentCard>
-          <CardInfoContent>
-            <CardInfoText>Insira os dados do Cartão:</CardInfoText>
-            <CardInfoName placeholder="Name" />
-            <CardInfoNumberContainer>
-              <CardInfoNumber placeholder="000000000000000" />
-              <RiVisaFill />
-            </CardInfoNumberContainer>
-            <CardInfoDate placeholder="00/00" />
-            <CardInfoCVC placeholder="000" />
-          </CardInfoContent>
-          <CardImageContent>
-            <CardImageText>Faça upload dos anexos do cartão:</CardImageText>
-            <CardImageInput>
-              <p>Cartão de Crédito (Frente)</p>
-              <a href="/">Adicionar</a>
-            </CardImageInput>
-            <CardImageInput>
-              <p>Cartão de Crédito (Verso)</p>
-              <a href="/">Adicionar</a>
-            </CardImageInput>
-            <CardImageInput>
-              <p>Selfie com o Cartão de Crédito</p>
-              <a href="/">Adicionar</a>
-            </CardImageInput>
-            <CardImageAttention>
-              <p>
-                Atenção: As fotos devem estar legíveis, com <br />
-                todas as informações visíveis do cartão
-              </p>
-            </CardImageAttention>
-          </CardImageContent>
-        </ContentCard>
-        <ButtonCard>Continuar</ButtonCard>
-      </Content>
-    </Container>
+
+      <Container>
+        <TitleContainer>
+          <FaPlusCircle />
+          <TitleIMage src={iconFilling} alt="filling" />
+          <TitleText>
+            Solicitar <br />
+            Empréstimo
+          </TitleText>
+        </TitleContainer>
+        <Content>
+          <ContentCard>
+            <CardInfoContent>
+              <CardInfoText>Insira os dados do Cartão:</CardInfoText>
+              <CardInfoName placeholder="Name" />
+              <CardInfoNumberContainer>
+                <CardInfoNumber placeholder="000000000000000" />
+                <RiVisaFill />
+              </CardInfoNumberContainer>
+              <CardInfoDate placeholder="00/00" />
+              <CardInfoCVC placeholder="000" />
+            </CardInfoContent>
+            <CardImageContent>
+              <CardImageText>Faça upload dos anexos do cartão:</CardImageText>
+              <CardImageInput>
+                <p>Cartão de Crédito (Frente)</p>
+                <a href="/">Adicionar</a>
+              </CardImageInput>
+              <CardImageInput>
+                <p>Cartão de Crédito (Verso)</p>
+                <a href="/">Adicionar</a>
+              </CardImageInput>
+              <CardImageInput>
+                <p>Selfie com o Cartão de Crédito</p>
+                <a href="/">Adicionar</a>
+              </CardImageInput>
+              <CardImageAttention>
+                <p>
+                  Atenção: As fotos devem estar legíveis, com <br />
+                  todas as informações visíveis do cartão
+                </p>
+              </CardImageAttention>
+            </CardImageContent>
+          </ContentCard>
+          <ButtonCard>Continuar</ButtonCard>
+        </Content>
+      </Container>
+    </>
   );
 };
 
