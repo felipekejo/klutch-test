@@ -194,20 +194,23 @@ export const ContractButton = styled.button`
     color: #228a95;
   }
 `;
-export const SubmitButton = styled.button`
-  width: 600px;
-  height: 98px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  display: flex;
-  background-color: #228a95;
-  border: 0;
-  border-radius: 5px;
-  color: #fff;
-  font-size: 39px;
-  font-weight: 700;
-  svg {
-    margin-right: 23px;
+export const SubmitButton = styled.div`
+  a {
+    width: 600px;
+    height: 98px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    background-color: #228a95;
+    border: 0;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 39px;
+    font-weight: 700;
+    text-decoration: none;
+    svg {
+      margin-right: 23px;
+    }
   }
 `;

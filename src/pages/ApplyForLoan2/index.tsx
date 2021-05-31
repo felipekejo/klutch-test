@@ -1,5 +1,6 @@
 import React from 'react';
 import { FaPlusCircle } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 import iconFilling from '../../assets/iconFilling.svg';
 
 import Header from '../../components/Header';
@@ -32,7 +33,9 @@ const ApplyForLoan2: React.FC = () => {
         <Content>
           <TextContent>Escolha a modalidade:</TextContent>
 
-          <ButtonCard>Cartão de Crédito</ButtonCard>
+          <ButtonCard>
+            <Link to="applyforloan3">Cartão de Crédito</Link>
+          </ButtonCard>
           <p>Ou</p>
           <PayrollLoansContainer>
             <PayrollLoans>Crédito Consignado</PayrollLoans>

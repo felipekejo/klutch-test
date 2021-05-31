@@ -1,6 +1,7 @@
 import React from 'react';
 import { FaPlusCircle } from 'react-icons/fa';
 import { RiVisaFill } from 'react-icons/ri';
+import { Link } from 'react-router-dom';
 
 import iconFilling from '../../assets/iconFilling.svg';
 
@@ -74,7 +75,9 @@ const ApplyForLoan: React.FC = () => {
               </CardImageAttention>
             </CardImageContent>
           </ContentCard>
-          <ButtonCard>Continuar</ButtonCard>
+          <ButtonCard>
+            <Link to="/applyforloan2">Continuar</Link>
+          </ButtonCard>
         </Content>
       </Container>
     </>

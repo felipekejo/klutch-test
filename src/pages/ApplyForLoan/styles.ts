@@ -89,13 +89,20 @@ export const ClientFoundName = styled.p`
   font-weight: 700;
   margin-bottom: 30px;
 `;
-export const ClientFoundButton = styled.button`
-  height: 98px;
-  width: 391px;
-  background-color: #228a95;
-  border-radius: 5px;
-  border: 0;
-  font-size: 39px;
-  color: #fff;
-  font-weight: 700;
+export const ClientFoundButton = styled.div`
+  a {
+    font-size: 39px;
+    color: #fff;
+    font-weight: 700;
+    text-decoration: none;
+    height: 98px;
+    width: 391px;
+    background-color: #228a95;
+    border-radius: 5px;
+    border: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 `;

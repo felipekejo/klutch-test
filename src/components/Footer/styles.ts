@@ -18,13 +18,20 @@ export const Container = styled.footer`
   }
 `;
 
-export const Button = styled.button`
-  background-color: #ef9c4b;
-  height: 53px;
-  width: 160px;
-  border-radius: 5px;
-  border: 0;
-  font-size: 18px;
-  font-weight: 700;
-  color: #fff;
+export const Button = styled.div`
+  a {
+    font-size: 18px;
+    font-weight: 700;
+    color: #fff;
+    text-decoration: none;
+    background-color: #ef9c4b;
+    height: 53px;
+    width: 160px;
+    border-radius: 5px;
+    border: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 `;

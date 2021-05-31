@@ -1,5 +1,6 @@
 import React from 'react';
 import { FaPlusCircle } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 import iconFilling from '../../assets/iconFilling.svg';
 
 import Header from '../../components/Header';
@@ -46,7 +47,9 @@ const ApplyForLoan: React.FC = () => {
             <ClientFoundTitle>Cliente Encontrado:</ClientFoundTitle>
             <ClientFoundCPF>074.119.005-93</ClientFoundCPF>
             <ClientFoundName>Lara Test</ClientFoundName>
-            <ClientFoundButton>Solicitar</ClientFoundButton>
+            <ClientFoundButton>
+              <Link to="/applyforloan1">Solicitar</Link>
+            </ClientFoundButton>
           </ClientFoundContainer>
         </Content>
       </Container>

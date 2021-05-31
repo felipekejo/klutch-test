@@ -1,6 +1,7 @@
 import React from 'react';
 import { FaPlusCircle } from 'react-icons/fa';
 import { GoCheck } from 'react-icons/go';
+import { Link } from 'react-router-dom';
 
 import iconFilling from '../../assets/iconFilling.svg';
 
@@ -98,8 +99,10 @@ const ApplyForLoan3: React.FC = () => {
             </ContractTypeButtons>
           </ContractContainer>
           <SubmitButton>
-            <GoCheck />
-            <p>Concluir</p>
+            <Link to="/applyforloan4">
+              <GoCheck />
+              <p>Concluir</p>
+            </Link>
           </SubmitButton>
         </ButtonsContainer>
         <TableInstallment />

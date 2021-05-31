@@ -138,15 +138,23 @@ export const CardImageAttention = styled.div`
   border-radius: 5px;
 `;
 
-export const ButtonCard = styled.button`
-  margin-top: 69px;
-  width: 390px;
-  height: 98px;
-  background-color: #228a95;
-  font-size: 39px;
-  font-weight: 700;
-  color: #fff;
-  border: 0;
-  border-radius: 5px;
-  margin-bottom: 80px;
+export const ButtonCard = styled.div`
+  a {
+    font-size: 39px;
+    font-weight: 700;
+    color: #fff;
+    text-decoration: none;
+    margin-top: 69px;
+    width: 390px;
+    height: 98px;
+    background-color: #228a95;
+
+    border: 0;
+    border-radius: 5px;
+    margin-bottom: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
 `;

@@ -47,17 +47,24 @@ export const TextContent = styled.h1`
   font-weight: 500;
   font-size: 33px;
 `;
-export const ButtonCard = styled.button`
-  width: 391px;
-  height: 98px;
-  background-color: #228a95;
-  color: #fff;
-  text-align: center;
-  border: 0;
-  border-radius: 5px;
-  font-size: 35px;
-  font-weight: 700;
-  margin-bottom: 21px;
+export const ButtonCard = styled.div`
+  a {
+    width: 391px;
+    height: 98px;
+    background-color: #228a95;
+    text-align: center;
+    border: 0;
+    border-radius: 5px;
+
+    margin-bottom: 21px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 35px;
+    font-weight: 700;
+    color: #fff;
+    text-decoration: none;
+  }
 `;
 export const PayrollLoansContainer = styled.div`
   width: 391px;
