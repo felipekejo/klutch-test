@@ -42,7 +42,7 @@ export const TextContent = styled.h1`
   font-weight: 500;
   font-size: 33px;
 `;
-export const ContentForm = styled.div`
+export const ContentForm = styled.form`
   display: flex;
   flex-direction: row;
   align-items: center;
