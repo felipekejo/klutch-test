@@ -42,7 +42,12 @@ const DesireAmount: React.FC = () => {
         <Content>
           <TextContent>Valor desejado</TextContent>
           <ContentForm>
-            <Input placeholder="R$0,00" mask="currency" />
+            <Input
+              placeholder="R$0,00"
+              mask="currency"
+              min="300,00"
+              max="10.000,00"
+            />
             <ButtonForm>Calcular</ButtonForm>
           </ContentForm>
           <SelectTableContainer>

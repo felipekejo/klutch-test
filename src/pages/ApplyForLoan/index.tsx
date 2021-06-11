@@ -35,21 +35,35 @@ interface Client {
 }
 
 const ApplyForLoan: React.FC = () => {
-  const [selectCPF, setSelectCPF] = useState('');
+  const [selectCPF, setSelectCPF] = useState<string | undefined>();
 
   const [clients, setClients] = useState<Client[]>([]);
-
-  async function handleCPF(event: FormEvent<HTMLFormElement>): Promise<void> {
-    event.preventDefault();
-    try {
-      const response = await api.get<Client[]>(`client?cpf=${selectCPF}`);
-      setClients(response.data);
-    } catch (err) {
-      console.log(err);
+  const [clientFound, setClientFound] = useState<Client[]>(() => {
+    const storageClientFound = localStorage.getItem('@Klutch:clientFound');
+    if (storageClientFound) {
+      return JSON.parse(storageClientFound);
     }
-  }
+    return [];
+  });
+
+  const handleCPF = useCallback(() => {
+    const searchClient = clients.filter(client => selectCPF === client.cpf);
+    setClientFound(searchClient);
+  }, [selectCPF, clients]);
+
+  useEffect(() => {
+    api.get<Client[]>('/client').then(response => {
+      setClients(response.data);
+    });
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem('@Klutch:clientFound', JSON.stringify(clientFound));
+  }, [clientFound]);
+
   console.log(selectCPF);
   console.log(clients);
+  console.log(clientFound);
 
   return (
     <>
@@ -75,18 +89,17 @@ const ApplyForLoan: React.FC = () => {
             />
             <ButtonForm type="submit">Buscar</ButtonForm>
           </ContentForm>
-          {clients ? (
-            <ClientFoundContainer>
-              <ClientFoundTitle>Cliente Encontrado:</ClientFoundTitle>
-              <ClientFoundCPF>{clients.cpf}</ClientFoundCPF>
-              <ClientFoundName>{clients}</ClientFoundName>
-              <ClientFoundButton>
-                <Link to="/applyforloan1">Solicitar</Link>
-              </ClientFoundButton>
-            </ClientFoundContainer>
-          ) : (
-            <></>
-          )}
+          {clientFound &&
+            clientFound.map(client => (
+              <ClientFoundContainer key={client.id}>
+                <ClientFoundTitle>Cliente Encontrado:</ClientFoundTitle>
+                <ClientFoundCPF>{client.cpf}</ClientFoundCPF>
+                <ClientFoundName>{client.name}</ClientFoundName>
+                <ClientFoundButton>
+                  <Link to="/applyforloan1">Solicitar</Link>
+                </ClientFoundButton>
+              </ClientFoundContainer>
+            ))}
         </Content>
       </Container>
     </>
