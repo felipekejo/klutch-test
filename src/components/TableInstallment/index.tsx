@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import api from '../../services/api';
 
 import {
@@ -7,6 +7,7 @@ import {
   TableContainer,
   Table,
 } from './styles';
+import TableLine from './TableLine';
 
 interface TableInstallmentProps {
   installment: {
@@ -25,20 +26,20 @@ interface TableInstallmentProps {
   };
 }
 
-interface InstallmentInformation {
-  id: number;
-  name: string;
-  installments: [
-    {
-      id: number;
-      installment: number;
-      installmentInterest: number;
-      installmentValue: number;
-      fullValue: number;
-      comission: number;
-    },
-  ];
-}
+// interface InstallmentInformation {
+//   id: number;
+//   name: string;
+//   installments: [
+//     {
+//       id: number;
+//       installment: number;
+//       installmentInterest: number;
+//       installmentValue: number;
+//       fullValue: number;
+//       comission: number;
+//     },
+//   ];
+// }
 
 const TableInstallment: React.FC<TableInstallmentProps> = ({
   installment: { name, installments },
@@ -58,15 +59,7 @@ const TableInstallment: React.FC<TableInstallmentProps> = ({
             <th>Comissão Parceiro</th>
           </tr>
           {installments.map(installment => {
-            return (
-              <tr key={installment.id}>
-                <td>{installment.installment}</td>
-                <td>{installment.installmentInterest}</td>
-                <td>{installment.installmentValue}</td>
-                <td>{installment.fullValue}</td>
-                <td>{installment.comission}</td>
-              </tr>
-            );
+            return <TableLine installment={installment} />;
           })}
         </Table>
       </TableContainer>

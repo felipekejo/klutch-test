@@ -1,4 +1,8 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
+
+interface ContainerProps {
+  isFocused: boolean;
+}
 
 export const Container = styled.div`
   display: flex;
