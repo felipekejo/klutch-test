@@ -1,4 +1,4 @@
-import React, { FormEvent, useCallback, useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import { FaPlusCircle } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import iconFilling from '../../assets/iconFilling.svg';
@@ -60,10 +60,6 @@ const ApplyForLoan: React.FC = () => {
   useEffect(() => {
     localStorage.setItem('@Klutch:clientFound', JSON.stringify(clientFound));
   }, [clientFound]);
-
-  console.log(selectCPF);
-  console.log(clients);
-  console.log(clientFound);
 
   return (
     <>

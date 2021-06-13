@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 import { FaPlusCircle } from 'react-icons/fa';
 import Input from '../../components/Input';
@@ -20,13 +20,34 @@ import {
   SelectContainer,
   Select,
 } from './styles';
+import api from '../../services/api';
+
+interface Installment {
+  id: number;
+  name: string;
+  installments: [
+    {
+      id: number;
+      installment: number;
+      installmentInterest: number;
+      installmentValue: number;
+      fullValue: number;
+      comission: number;
+    },
+  ];
+}
 
 const DesireAmount: React.FC = () => {
-  // const addTable = useCallback(() => {
-  //   return (
+  const [amount, setAmount] = useState<string | undefined>();
 
-  //   );
-  // }, []);
+  const [installments, setInstallments] = useState<Installment[]>([]);
+
+  useEffect(() => {
+    api.get<Installment[]>('/rateTable').then(response => {
+      setInstallments(response.data);
+    });
+  }, []);
+
   return (
     <>
       <Container>
@@ -47,25 +68,23 @@ const DesireAmount: React.FC = () => {
               mask="currency"
               min="300,00"
               max="10.000,00"
+              value={amount}
+              onChange={e => setAmount(e.target.value)}
             />
             <ButtonForm>Calcular</ButtonForm>
           </ContentForm>
-          <SelectTableContainer>
-            <SelectContainer>
-              <Select>
-                <div />
-              </Select>
-            </SelectContainer>
-            <TableInstallment />
-          </SelectTableContainer>
-          <SelectTableContainer>
-            <SelectContainer>
-              <Select>
-                <div />
-              </Select>
-            </SelectContainer>
-            <TableInstallment />
-          </SelectTableContainer>
+          {installments.map(installment => {
+            return (
+              <SelectTableContainer key={installment.id}>
+                <SelectContainer>
+                  <Select>
+                    <div />
+                  </Select>
+                </SelectContainer>
+                <TableInstallment installment={installment} />
+              </SelectTableContainer>
+            );
+          })}
         </Content>
 
         <Footer />

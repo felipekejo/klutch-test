@@ -105,7 +105,7 @@ const ApplyForLoan3: React.FC = () => {
             </Link>
           </SubmitButton>
         </ButtonsContainer>
-        <TableInstallment />
+        {/* <TableInstallment /> */}
       </Container>
     </>
   );

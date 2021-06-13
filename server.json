@@ -6,7 +6,7 @@
       "installments": [
         {
           "id": 1,
-          "installments": 1,
+          "installment": 1,
           "installmentInterest": 100,
           "installmentValue": 444.00,
           "fullValue": 444.00,
@@ -14,7 +14,7 @@
         },
         {
           "id": 2,
-          "installments": 2,
+          "installment": 2,
           "installmentInterest": 20.5,
           "installmentValue": 1338.76,
           "fullValue": 2677.51,
@@ -28,7 +28,7 @@
       "installments": [
         {
           "id": 3,
-          "installments": 1,
+          "installment": 1,
           "installmentInterest": 10,
           "installmentValue": 22.00,
           "fullValue": 224.00,
@@ -36,7 +36,7 @@
         },
         {
           "id": 4,
-          "installments": 2,
+          "installment": 2,
           "installmentInterest": 20.5,
           "installmentValue": 2.76,
           "fullValue": 9.51,

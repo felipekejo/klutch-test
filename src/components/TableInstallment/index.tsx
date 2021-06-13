@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import api from '../../services/api';
 
 import {
   Container,
@@ -7,12 +8,46 @@ import {
   Table,
 } from './styles';
 
-const TableInstallment: React.FC = () => {
+interface TableInstallmentProps {
+  installment: {
+    id: number;
+    name: string;
+    installments: [
+      {
+        id: number;
+        installment: number;
+        installmentInterest: number;
+        installmentValue: number;
+        fullValue: number;
+        comission: number;
+      },
+    ];
+  };
+}
+
+interface InstallmentInformation {
+  id: number;
+  name: string;
+  installments: [
+    {
+      id: number;
+      installment: number;
+      installmentInterest: number;
+      installmentValue: number;
+      fullValue: number;
+      comission: number;
+    },
+  ];
+}
+
+const TableInstallment: React.FC<TableInstallmentProps> = ({
+  installment: { name, installments },
+}) => {
   return (
     <Container>
       <TableContainer>
         <TableTitleContainer>
-          <h1>Tabela Padrão</h1>
+          <h1>{name}</h1>
         </TableTitleContainer>
         <Table>
           <tr>
@@ -22,27 +57,17 @@ const TableInstallment: React.FC = () => {
             <th>Valor total</th>
             <th>Comissão Parceiro</th>
           </tr>
-          <tr>
-            <td>1</td>
-            <td>20.5</td>
-            <td>1338.76</td>
-            <td>2677.51</td>
-            <td>455.51</td>
-          </tr>
-          <tr>
-            <td>2</td>
-            <td>20.5</td>
-            <td>1338.76</td>
-            <td>2677.51</td>
-            <td>455.51</td>
-          </tr>
-          <tr>
-            <td>3</td>
-            <td>20.5</td>
-            <td>1338.76</td>
-            <td>2677.51</td>
-            <td>455.51</td>
-          </tr>
+          {installments.map(installment => {
+            return (
+              <tr key={installment.id}>
+                <td>{installment.installment}</td>
+                <td>{installment.installmentInterest}</td>
+                <td>{installment.installmentValue}</td>
+                <td>{installment.fullValue}</td>
+                <td>{installment.comission}</td>
+              </tr>
+            );
+          })}
         </Table>
       </TableContainer>
     </Container>
